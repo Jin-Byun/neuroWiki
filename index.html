@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>neurowiki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="./NeuroFirebaseAPI.js"></script>
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    body {
+      display: grid;
+      grid-template-columns: 3% 47% 47% 3%;
+      grid-template-rows: 5% 20% 30% 35% 10%;
+    }
+
+    #heading {
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 2;
+      width: max-content;
+      font-size: clamp(1rem, 7vw, 2rem);
+      margin-inline: auto;
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    #container {
+      margin-inline: auto;
+      margin-top: auto;
+      margin-bottom: 5%;
+      grid-column: 2 / span 2;
+      grid-row: 3 / span 2;
+      width: 360px;
+      height: 250px;
+      display: grid;
+      grid-template-columns: repeat(10, 10%);
+      grid-template-rows: repeat(10, 10%);
+    }
+
+    .img_title {
+    display: table;
+    background: #888888;
+    position: absolute;
+    }
+
+    .lobe_container > img{
+    cursor: none;
+    display: table;    
+    }
+
+    #container div {
+      width: min-content;
+      height: min-content;
+    }
+
+    #frontal {
+      grid-row: 1 / span 8;
+      grid-column: 1 / span 7;
+    }
+
+    #parietal {
+      margin-top: 12px;
+      margin-left: 4px;
+      grid-row: 1 / span 6;
+      grid-column: 5 / span 6;
+    }
+
+
+    #occipital {
+      margin-top: 8%;
+      margin-left: auto;
+      grid-row: 5 / span 5;
+      grid-column: 8 / span 3;
+    }
+
+    #temporal {
+      margin-top: 4%;
+      margin-left: 11px;
+      grid-row: 5 / span 5;
+      grid-column: 3 / span 6;
+    }
+
+    img {
+      filter: saturate(0);
+      transition: filter 0.4s;
+    }
+
+    img:hover {
+      filter:saturate(60%);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="heading"><h1>Neuro-Wiki</h1></div>
+
+  <div id="container">
+    <div id="frontal" class="lobe_container"><img src="./images/frontal.png" title="frontal"></div>
+  <div id="parietal" class="lobe_container"><img src="./images/parietal.png" title="parietal"></div>
+  <div id="temporal" class="lobe_container"><img src="./images/temporal.png" title="temporal"></div>
+  <div id="occipital" class="lobe_container"><img src="./images/occipital.png" title="occipital"></div>
+
+  </div>
+  
+</body>
+
+<script src="./index.js"></script>
+
+</html>
